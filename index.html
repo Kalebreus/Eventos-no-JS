@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos no JS — clique, input e submit</title>
+    <style>
+      body { max-width: 48rem; margin: 2rem auto; padding: 0 1rem; font-family: system-ui, sans-serif; line-height: 1.6; color: #172033; }
+      h1, h2 { line-height: 1.25; }
+      section { margin-top: 2rem; }
+      label { display: block; font-weight: 600; }
+      button, input { font: inherit; padding: 0.5rem 0.75rem; }
+      input { display: block; width: 100%; max-width: 26rem; box-sizing: border-box; margin: 0.4rem 0 0.75rem; }
+      button { cursor: pointer; }
+      .retorno { min-height: 1.6em; overflow-wrap: anywhere; }
+      code { background: #eef1f6; padding: 0.1rem 0.25rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Eventos no JavaScript</h1>
+      <p>Pratique <code>click</code>, <code>input</code> e <code>submit</code>. Abra o Console para acompanhar os eventos.</p>
+
+      <section aria-labelledby="titulo-clique">
+        <h2 id="titulo-clique">1. Clique no botão</h2>
+        <button type="button" id="btn">Enviar</button>
+        <p id="retorno-clique" class="retorno" role="status">Nenhum clique capturado.</p>
+      </section>
+
+      <section aria-labelledby="titulo-input">
+        <h2 id="titulo-input">2. Alteração do campo</h2>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" autocomplete="off">
+        <p id="retorno-nome" class="retorno" aria-live="polite">Nenhum nome digitado.</p>
+      </section>
+
+      <section aria-labelledby="titulo-busca">
+        <h2 id="titulo-busca">3. Envio do formulário de busca</h2>
+        <p id="ajuda-busca">Busque um tema da lista local. Experimente HTML, JavaScript ou Node.js.</p>
+        <form id="form-busca" role="search">
+          <label for="busca">Termo de busca</label>
+          <input type="search" id="busca" name="q" aria-describedby="ajuda-busca" autocomplete="off">
+          <button type="submit">Buscar</button>
+        </form>
+        <p id="status-busca" class="retorno" role="status">Envie um termo para consultar os temas.</p>
+        <ul id="resultados" aria-label="Resultados da busca"></ul>
+      </section>
+      <noscript>Ative o JavaScript no navegador para praticar os eventos.</noscript>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
